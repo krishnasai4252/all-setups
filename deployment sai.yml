@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: train
+  name: train-deploy
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: train
+  template:
+    metadata:
+      labels:
+        app: train
+    spec:
+      containers:
+      - name: cont1
+        image: krish150/paytmtrain:latest
+ 
